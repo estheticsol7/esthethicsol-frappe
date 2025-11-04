@@ -1,0 +1,182 @@
+$input-height: 28px;
+$disabled-input-height: 22px;
+
+:root,
+[data-theme="light"] {
+
+    // ---- Monolith Theme Palette ----
+    --monolith-bg-primary: #F2F2F2;       // Light Grey (Main Page)
+    --monolith-bg-content: #A6A6A6;       // Dark Grey (for all panels)
+
+    --monolith-text-primary: #262626;
+    --monolith-text-secondary: #595959;
+    --monolith-text-tertiary: #A6A6A6;
+    --monolith-text-on-dark: #FFFFFF;     // White text for dark panels
+
+    --monolith-accent-blue: #007ACC;
+    --monolith-accent-white: #FFFFFF;
+
+    --monolith-border-color: #D9D9D9;
+    --monolith-disabled-bg: #D9D9D9;
+    --monolith-disabled-text: #A6A6A6;
+
+    --monolith-shadow-soft: 0px 4px 12px rgba(100, 100, 100, 0.1),
+                            0px 1px 3px rgba(100, 100, 100, 0.08);
+    --monolith-shadow-none: 0 0 #0000;
+    // ---- End Monolith Palette ----
+
+    // ---- Frappe Variables (Mapped) ----
+    --brand-color: var(--monolith-accent-blue);
+
+    --padding-xs: 5px;
+    --padding-sm: 6px;
+    --padding-md: 15px;
+    --padding-lg: 20px;
+    --padding-xl: 30px;
+    --padding-2xl: 40px;
+
+    --margin-xs: 5px;
+    --margin-sm: 10px;
+    --margin-md: 15px;
+    --margin-lg: 20px;
+    --margin-xl: 30px;
+    --margin-2xl: 40px;
+
+    --modal-shadow: var(--monolith-shadow-soft);
+    --card-shadow: var(--monolith-shadow-soft);
+    --btn-shadow: var(--monolith-shadow-soft);
+
+    // Navbar
+    --navbar-height: 48px;
+
+    // SVG Colors
+    --icon-fill: transparent;
+    --icon-fill-bg: var(--monolith-bg-content);
+    --icon-stroke: var(--monolith-text-on-dark);
+
+    // Backgrounds
+    --bg-blue: var(--blue-100);
+    --bg-light-blue: var(--blue-50);
+    --bg-dark-blue: var(--blue-300);
+    --bg-green: var(--green-100);
+    --bg-yellow: var(--yellow-100);
+    --bg-orange: var(--orange-100);
+    --bg-red: var(--red-100);
+    --bg-gray: var(--gray-100);
+    --bg-grey: var(--gray-100);
+    --bg-light-gray: var(--gray-100);
+    --bg-dark-gray: var(--gray-400);
+    --bg-darkgrey: var(--gray-400);
+    --bg-purple: var(--purple-100);
+    --bg-pink: var(--pink-50);
+    --bg-cyan: var(--cyan-50);
+
+    // Text Colors (Default)
+    --text-on-blue: var(--blue-700);
+    --text-on-light-blue: var(--blue-600);
+    --text-on-dark-blue: var(--blue-800);
+    --text-on-green: var(--green-800);
+    --text-on-yellow: var(--yellow-700);
+    --text-on-orange: var(--orange-700);
+    --text-on-red: var(--red-700);
+    --text-on-gray: var(--gray-700);
+    --text-on-grey: var(--gray-700);
+    --text-on-darkgrey: var(--gray-800);
+    --text-on-dark-gray: var(--gray-800);
+    --text-on-light-gray: var(--gray-800);
+    --text-on-purple: var(--purple-700);
+    --text-on-pink: var(--pink-700);
+    --text-on-cyan: var(--cyan-700);
+
+    // Alerts
+    --alert-text-danger: var(--monolith-text-primary);
+    --alert-text-warning: var(--monolith-text-primary);
+    --alert-text-info: var(--monolith-text-primary);
+    --alert-text-success: var(--monolith-text-primary);
+    --alert-bg-danger: var(--red-50);
+    --alert-bg-warning: var(--yellow-50);
+    --alert-bg-info: var(--blue-50);
+    --alert-bg-success: var(--green-100);
+
+    // Layout
+    --bg-color: var(--monolith-bg-primary);
+    --fg-color: var(--monolith-bg-content);
+    --subtle-accent: var(--gray-50);
+    --subtle-fg: var(--gray-100);
+    --navbar-bg: var(--monolith-bg-content);
+    --fg-hover-color: var(--gray-100);
+    --card-bg:#A6A6A6;
+    --disabled-text-color: var(--monolith-disabled-text);
+    --disabled-control-bg: var(--monolith-disabled-bg);
+    --control-bg: var(--gray-100);
+    --control-bg-on-gray: var(--gray-200);
+    --awesomebar-focus-bg: var(--monolith-bg-content);
+    --modal-bg: var(--monolith-bg-content);
+    --toast-bg: var(--monolith-bg-content);
+    --popover-bg: var(--monolith-bg-content);
+
+    --awesomplete-hover-bg: var(--control-bg);
+
+    // Buttons
+    --btn-primary: var(--monolith-accent-blue);
+    --btn-default-bg: var(--gray-100);
+    --btn-default-hover-bg: var(--gray-300);
+
+    // Borders
+    --border-primary: var(--monolith-border-color);
+
+    // Scrollbar
+    --scrollbar-thumb-color: var(--monolith-text-tertiary);
+    --scrollbar-track-color: var(--monolith-border-color);
+
+    --shadow-inset: inset 0px -1px 0px var(--monolith-border-color);
+    --border-color: var(--monolith-border-color);
+    --dark-border-color: var(--monolith-border-color);
+    --table-border-color: var(--monolith-border-color);
+    --highlight-color: var(--gray-50);
+    --yellow-highlight-color: var(--yellow-50);
+
+    --btn-group-border-color: var(--monolith-border-color);
+
+    --placeholder-color: var(--monolith-text-tertiary);
+
+    --highlight-shadow: 1px 1px 10px var(--blue-50), 0px 0px 4px var(--blue-600);
+
+    // Code
+    --code-block-bg: var(--monolith-text-primary);
+    --code-block-text: var(--gray-400);
+
+    --primary-color: var(--monolith-text-on-dark);
+    --btn-height: 28px;
+
+    // Input
+    --input-height: #{$input-height};
+    --input-disabled-bg: var(--monolith-disabled-bg);
+
+    // Checkbox
+    --checkbox-right-margin: var(--margin-xs);
+    --checkbox-size: 14px;
+    --checkbox-color: var(--monolith-accent-blue);
+    --checkbox-focus-shadow: 0 0 0 2px var(--monolith-accent-blue);
+    --checkbox-gradient: linear-gradient(
+        180deg,
+        var(--monolith-accent-blue) -124.51%,
+        var(--monolith-accent-blue) 100%
+    );
+    --checkbox-disabled-gradient: linear-gradient(
+        180deg,
+        var(--disabled-control-bg) -124.51%,
+        var(--disabled-control-bg) 100%
+    );
+
+    // Switch
+    --switch-bg: var(--monolith-border-color);
+
+    // Diff colors
+    --diff-added: var(--green-100);
+    --diff-removed: var(--red-100);
+
+    // Arrows
+    --right-arrow-svg: url("data:image/svg+xml;utf8,<svg width='6' height='8' viewBox='0 0 6 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1.25 7.5L4.75 4L1.25 0.5' stroke='%231F272E' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    --left-arrow-svg: url("data:image/svg+xml;utf8,<svg width='6' height='8' viewBox='0 0 6 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M7.5 9.5L4 6l3.5-3.5' stroke='%231F272E' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
