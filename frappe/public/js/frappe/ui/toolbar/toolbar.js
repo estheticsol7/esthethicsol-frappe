@@ -26,6 +26,16 @@ frappe.ui.toolbar.Toolbar = class {
 
 	make() {
 		this.bind_events();
+		// --- ESTHETICSOL EDIT: FORCE FULL WIDTH DEFAULT ---
+        // If the user has NEVER toggled this setting before (it is null or undefined),
+        // we force it to TRUE by default.
+        if (localStorage.getItem("container_fullwidth") === null) {
+            localStorage.setItem("container_fullwidth", "true");
+        }
+        
+        // Apply the setting immediately
+        frappe.ui.toolbar.set_fullwidth_if_enabled();
+        // --------------------------------------------------
 		$(document).trigger("toolbar_setup");
 	}
 

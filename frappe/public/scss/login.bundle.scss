@@ -2,7 +2,7 @@
 
 body {
 	@include media-breakpoint-up(sm) {
-		background-color: var(--bg-light-gray);
+		background-color: var(--login-bg);
 	}
 	.page-content-wrapper {
 		min-height: calc(100vh - 220px);
@@ -26,7 +26,7 @@ body {
 .for-email-login {
 	.page-card {
 		padding: 45px 10px;
-		background-color: #fff;
+		background: var(--login-bg);
 		max-width: 400px;
 		margin: 0 auto;
 		border-radius: var(--border-radius-md);

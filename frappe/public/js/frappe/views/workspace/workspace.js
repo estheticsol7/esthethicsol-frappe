@@ -137,6 +137,7 @@ frappe.views.Workspace = class Workspace {
 	}
 
 	sidebar_item_container(item) {
+		
 		item.indicator_color =
 			item.indicator_color || this.indicator_colors[Math.floor(Math.random() * 12)];
 

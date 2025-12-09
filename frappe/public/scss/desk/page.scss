@@ -44,7 +44,7 @@
 }
 
 .page-container {
-	background-color: var(--bg-color);
+	background: var(--login-bg);
 
 	.page-body.full-width {
 		width: 100%;
@@ -204,4 +204,12 @@
 .page-only-label {
 	margin-top: var(--margin-xs);
 	text-align: center;
+}
+
+.sidebar-toggle-btn > * {
+	pointer-events: auto;
+}
+
+.layout-side-section.sidebar-hidden {
+	display: none;
 }

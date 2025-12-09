@@ -13,7 +13,7 @@ body {
 	&.full-width {
 		@include media-breakpoint-up(md) {
 			.container {
-				width: 90%;
+				width: 100%;
 				max-width: 100%;
 			}
 		}
@@ -499,7 +499,7 @@ kbd {
 		}
 
 		&.selected {
-			background-color: var(--sidebar-select-color);
+			background-color: lightblue;
 		}
 
 		> a {
@@ -593,7 +593,7 @@ body.no-sidebar {
 }
 
 .app-logo {
-	width: 24px;
+	width: 60px;
 	h4 {
 		margin-top: 0;
 	}

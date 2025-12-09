@@ -1,0 +1,25 @@
+.fullpage-sidebar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: auto !important;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff; /* or theme color */
+  z-index: 1000;
+}
+
+/* adjust menu item icons / layout */
+.fullpage-sidebar .workspace-item {
+  flex: 0 0 120px; /* each menu block width */
+  text-align: center;
+  margin: 10px;
+  padding: 15px;
+}
+
+.fullpage-sidebar .workspace-item .icon {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 8px;
+}

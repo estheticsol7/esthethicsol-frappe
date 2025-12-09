@@ -34,8 +34,9 @@ $disabled-input-height: 22px;
 	// Background Text Color Pairs
 	--bg-blue: var(--blue-100);
 	--bg-light-blue: var(--blue-50);
-	--bg-dark-blue: var(--blue-300);
+	--bg-dark-blue: var(--blue-500);
 	--bg-green: var(--green-100);
+	--bg-dark-green: var(--green-500);
 	--bg-yellow: var(--yellow-100);
 	--bg-orange: var(--orange-100);
 	--bg-red: var(--red-100);
@@ -79,7 +80,8 @@ $disabled-input-height: 22px;
 	--fg-color: white;
 	--subtle-accent: var(--gray-50);
 	--subtle-fg: var(--gray-100);
-	--navbar-bg: white;
+	--navbar-bg: linear-gradient(90deg, rgb(236, 241, 243) 0%, rgb(23, 211, 102) 50%, rgb(233, 233, 224) 100%);
+	--login-bg: linear-gradient(90deg, rgb(190 243 190) 0%, rgb(220, 230, 225) 50%, rgb(180 241 199) 100%);
 	--fg-hover-color: var(--gray-100);
 	--card-bg: var(--fg-color);
 	--disabled-text-color: var(--gray-600);
@@ -94,7 +96,7 @@ $disabled-input-height: 22px;
 	--awesomplete-hover-bg: var(--control-bg);
 
 	// Button Colors
-	--btn-primary: var(--gray-900);
+	--btn-primary: var(--blue-600);
 	--btn-default-bg: var(--gray-100);
 	--btn-default-hover-bg: var(--gray-300);
 

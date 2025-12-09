@@ -935,15 +935,23 @@ body {
 
 [data-page-route="Workspaces"] {
 	@media (min-width: map-get($grid-breakpoints, "lg")) {
+		.workspaces-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+			gap: 30px;
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+		}
 		.layout-main {
 			height: calc(100vh - var(--navbar-height) - var(--page-head-height) - 5px);
 			.layout-side-section,
 			.layout-main-section-wrapper {
 				height: 100%;
 				overflow-y: auto;
-				scrollbar-color: var(--gray-200) transparent;
+				scrollbar-color: var(--bg-dark-green) transparent;
 				[data-theme="dark"] & {
-					scrollbar-color: var(--gray-800) transparent;
+					scrollbar-color: var(--bg-dark-blue) transparent;
 				}
 
 				&::-webkit-scrollbar-track {

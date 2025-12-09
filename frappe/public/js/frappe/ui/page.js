@@ -100,6 +100,75 @@ frappe.ui.Page = class Page {
 				<div class="row layout-main">
 					<div class="col-lg-2 layout-side-section"></div>
 					<div class="col layout-main-section-wrapper">
+					<div class="container" style="min-height: 50px;padding: 10px;">
+						<div class="row flex align-center page-head-content justify-between">
+							<div class="col-md-4 col-sm-6 col-xs-7 page-title">
+								<!-- <div class="title-image hide hidden-md hidden-lg"></div> -->
+								<!-- title -->
+								<button class="btn-reset sidebar-toggle-btn">
+									<svg class="es-icon icon-md sidebar-toggle-placeholder">
+										<use href="#es-line-align-justify"></use>
+									</svg>
+									<span class="sidebar-toggle-icon">
+										<svg class="es-icon icon-md">
+											<use href="#es-line-sidebar-collapse">
+											</use>
+										</svg>
+									</span>
+								</button>
+								<div class="flex fill-width title-area">
+									<div>
+										<div class="flex">
+											<h3 class="ellipsis title-text"></h3>
+											<span class="indicator-pill whitespace-nowrap"></span>
+										</div>
+										<div class="ellipsis sub-heading hide text-muted"></div>
+									</div>
+									<button class="btn btn-default more-button hide">
+										<svg class="icon icon-sm">
+											<use href="#icon-dot-horizontal">
+											</use>
+										</svg>
+									</button>
+								</div>
+							</div>
+							<div class="flex col page-actions justify-content-end">
+								<!-- buttons -->
+								<div class="custom-actions hide hidden-xs hidden-md"></div>
+								<div class="standard-actions flex">
+									<span class="page-icon-group hide hidden-xs hidden-sm"></span>
+									<div class="menu-btn-group hide">
+										<button type="button" class="btn btn-default icon-btn" data-toggle="dropdown" aria-expanded="false" aria-label="{{ __("Menu") }}">
+											<span>
+												<span class="menu-btn-group-label">
+													<svg class="icon icon-sm">
+														<use href="#icon-dot-horizontal">
+														</use>
+													</svg>
+												</span>
+											</span>
+										</button>
+										<ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+									</div>
+									<button class="btn btn-secondary btn-default btn-sm hide"></button>
+									<div class="actions-btn-group hide">
+										<button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown" aria-expanded="false">
+											<span>
+												<span class="hidden-xs actions-btn-group-label">{%= __("Actions") %}</span>
+												<svg class="icon icon-xs">
+													<use href="#icon-select">
+													</use>
+												</svg>
+											</span>
+										</button>
+										<ul class="dropdown-menu dropdown-menu-right" role="menu">
+										</ul>
+									</div>
+									<button class="btn btn-primary btn-sm hide primary-action"></button>
+								</div>
+							</div>
+						</div>
+					</div>
 						<div class="layout-main-section"></div>
 						<div class="layout-footer hide"></div>
 					</div>
@@ -184,32 +253,40 @@ frappe.ui.Page = class Page {
 	}
 
 	setup_sidebar_toggle() {
-		let sidebar_toggle = $(".page-head").find(".sidebar-toggle-btn");
+		let sidebar_toggle = this.wrapper.find(".page-head .sidebar-toggle-btn");
 		let sidebar_wrapper = this.wrapper.find(".layout-side-section");
+
 		if (this.disable_sidebar_toggle || !sidebar_wrapper.length) {
-			sidebar_toggle.last().remove();
+			sidebar_toggle.remove();
 			this.wrapper.addClass("no-list-sidebar");
 		} else {
 			if (!frappe.is_mobile()) {
 				sidebar_toggle.attr("title", __("Toggle Sidebar"));
 			}
+			
 			sidebar_toggle.attr("aria-label", __("Toggle Sidebar"));
-			sidebar_toggle.tooltip({
-				delay: { show: 600, hide: 100 },
-				trigger: "hover",
-			});
-			sidebar_toggle.click(() => {
+			
+			// [HACK] Remove any existing tooltip/listeners to prevent conflicts
+			sidebar_toggle.off('click'); 
+
+			// [FIX] Global Event Delegation: Listens for clicks on this class ANYWHERE in the page wrapper
+			// This survives re-renders of the button
+			this.wrapper.on('click', '.sidebar-toggle-btn', (e) => {
+				e.preventDefault();
+				e.stopPropagation(); // Stop it from bubbling up
+
 				if (frappe.utils.is_xs() || frappe.utils.is_sm()) {
 					this.setup_overlay_sidebar();
 				} else {
 					sidebar_wrapper.toggle();
 				}
+				
+				// Force a body trigger so other UI components know what happened
 				$(document.body).trigger("toggleSidebar");
 				this.update_sidebar_icon();
 			});
 		}
 	}
-
 	setup_overlay_sidebar() {
 		this.sidebar.find(".close-sidebar").remove();
 		let overlay_sidebar = this.sidebar.find(".overlay-sidebar").addClass("opened");
@@ -234,7 +311,7 @@ frappe.ui.Page = class Page {
 		let sidebar_toggle = $(".page-head").find(".sidebar-toggle-btn");
 		let sidebar_toggle_icon = sidebar_toggle.find(".sidebar-toggle-icon");
 		let sidebar_wrapper = this.wrapper.find(".layout-side-section");
-		let is_sidebar_visible = $(sidebar_wrapper).is(":visible");
+		let is_sidebar_visible = !sidebar_wrapper.hasClass("sidebar-hidden");
 		sidebar_toggle_icon.html(
 			frappe.utils.icon(
 				is_sidebar_visible ? "es-line-sidebar-collapse" : "es-line-sidebar-expand",
