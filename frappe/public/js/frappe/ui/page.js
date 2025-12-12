@@ -220,16 +220,18 @@ frappe.ui.Page = class Page {
 		this.card_layout && this.main.addClass("frappe-card");
 
 		// keyboard shortcuts
-		let menu_btn = this.menu_btn_group.find("button");
-		menu_btn.attr("title", __("Menu")).tooltip({ delay: { show: 600, hide: 100 } });
-		frappe.ui.keys
-			.get_shortcut_group(this.page_actions[0])
-			.add(menu_btn, menu_btn.find(".menu-btn-group-label"));
+		if (this.page_actions.length > 0) {
+			let menu_btn = this.menu_btn_group.find("button");
+			menu_btn.attr("title", __("Menu")).tooltip({ delay: { show: 600, hide: 100 } });
+			frappe.ui.keys
+				.get_shortcut_group(this.page_actions[0])
+				.add(menu_btn, menu_btn.find(".menu-btn-group-label"));
 
-		let action_btn = this.actions_btn_group.find("button");
-		frappe.ui.keys
-			.get_shortcut_group(this.page_actions[0])
-			.add(action_btn, action_btn.find(".actions-btn-group-label"));
+			let action_btn = this.actions_btn_group.find("button");
+			frappe.ui.keys
+				.get_shortcut_group(this.page_actions[0])
+				.add(action_btn, action_btn.find(".actions-btn-group-label"));
+		}
 
 		// https://axesslab.com/skip-links
 		this.skip_link_to_main = $("<button>")

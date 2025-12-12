@@ -27,9 +27,9 @@ $disabled-input-height: 22px;
 	--navbar-height: 48px;
 
 	// SVG Colors
-	--icon-fill: transparent;
-	--icon-fill-bg: var(--fg-color);
-	--icon-stroke: var(--gray-800);
+	--icon-fill: #58615900;
+	--icon-fill-bg: #50e4d0;
+	--icon-stroke: var(--red-600);
 
 	// Background Text Color Pairs
 	--bg-blue: var(--blue-100);
@@ -80,8 +80,9 @@ $disabled-input-height: 22px;
 	--fg-color: white;
 	--subtle-accent: var(--gray-50);
 	--subtle-fg: var(--gray-100);
-	--navbar-bg: linear-gradient(90deg, rgb(236, 241, 243) 0%, rgb(23, 211, 102) 50%, rgb(233, 233, 224) 100%);
-	--login-bg: linear-gradient(90deg, rgb(190 243 190) 0%, rgb(220, 230, 225) 50%, rgb(180 241 199) 100%);
+	--navbar-bg: linear-gradient(90deg, rgb(236, 241, 243) 0%, rgb(76 175 48) 50%, rgb(233, 233, 224) 100%);
+	--login-bg: linear-gradient(90deg, rgb(146, 236, 119) 0%, rgb(220, 230, 225) 20%, rgb(180 241 199) 100%);
+	--sidebar-mobile-bg: linear-gradient(90deg, rgb(82, 235, 82) 0%, rgb(220, 230, 225) 50%, rgb(180 241 199) 100%);
 	--fg-hover-color: var(--gray-100);
 	--card-bg: var(--fg-color);
 	--disabled-text-color: var(--gray-600);

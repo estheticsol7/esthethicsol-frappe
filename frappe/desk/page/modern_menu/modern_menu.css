@@ -1,0 +1,91 @@
+/* Hide Sidebar */
+[data-page-route="modern-menu"] .layout-side-section {
+    display: none !important;
+}
+[data-page-route="modern-menu"] .layout-main-section {
+    width: 100% !important;
+    margin-left: 0 !important;
+}
+
+/* Main Container */
+.modern-menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    font-family: var(--font-stack);
+}
+
+/* Header Section */
+.modern-menu-header {
+    margin-bottom: 50px;
+    text-align: center; /* Center the title */
+}
+
+.modern-menu-header h1 {
+    font-weight: 800;
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+/* Grid Layout */
+.modern-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Wider cards */
+    gap: 24px;
+}
+
+/* Card Design */
+.menu-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px; /* Softer corners */
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: var(--shadow-xs);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 200px;
+}
+
+/* Hover State */
+.menu-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+}
+
+/* Icon Styling */
+.card-icon-wrapper {
+    margin-bottom: 20px;
+    color: var(--primary);
+    background: var(--control-bg); /* Subtle circle background */
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon-wrapper svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* Typography */
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.emoji-icon {
+    font-size: 30px;
+}

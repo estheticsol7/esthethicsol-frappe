@@ -6,6 +6,11 @@ frappe.ui.keys.shortcut_groups = shortcut_groups;
 
 frappe.ui.keys.get_shortcut_group = (parent) => {
 	// parent must be an object
+	if (!parent) {
+		return {
+			add: () => {},
+		};
+	}
 	if (!shortcut_groups.has(parent)) {
 		shortcut_groups.set(parent, new frappe.ui.keys.AltShortcutGroup());
 	}

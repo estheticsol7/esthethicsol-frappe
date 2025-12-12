@@ -232,7 +232,7 @@ body[data-route^="Module"] .main-menu {
 		@media (max-width: 991px) {
 			margin-top: 0 !important;
 			position: fixed;
-			background: var(--fg-color);
+			background: var(--sidebar-mobile-bg);
 			top: 0;
 			left: 0;
 			transform: translateX(-110%);
@@ -568,40 +568,4 @@ body[data-route^="Module"] .main-menu {
 
 .shared-user {
 	margin-bottom: 10px;
-}
-/* =========================================
-   TEST: CUSTOM SIDEBAR ICONS
-   ========================================= */
-
-/* 1. CONFIGURATION MAP */
-$module-icons: (
-    "Accounting": "accounting.svg",
-    "Stock":      "stock.svg",
-    "Buying":     "buying.svg"
-);
-
-/* 2. AUTOMATION LOOP */
-@each $module-name, $filename in $module-icons {
-    .sidebar-item-container[item-name="#{$module-name}"] {
-        
-        /* Hide default icon */
-        .sidebar-item-icon {
-            display: none !important;
-        }
-
-        /* Inject custom icon */
-        &::before {
-            content: '';
-            display: inline-block;
-            width: 18px; 
-            height: 18px;
-            margin-right: 8px;
-            
-            /* Dynamic Path */
-            background-image: url('/assets/frappe/images/sidebar_icons/#{$filename}');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-        }
-    }
 }
