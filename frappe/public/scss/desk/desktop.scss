@@ -135,7 +135,7 @@ body {
 
 	.widget-head {
 		@include flex(flex, space-between, center, null);
-
+		border-bottom: 1px solid var(--dark-border-color);
 		.widget-label {
 			min-width: 0px;
 
